@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="is">
+<head>
+    <meta charset="UTF-8">
+    <title>Pöntunarsíða</title>
+</head>
+<form id="pontun" method="POST">
+    <label for="name">Nafn:</label>
+    <input type="text" id="name" name="name" required>
+    <label for="dish">Réttur:</label>
+    <select id="dish" name="dish" required>
+        <option value="" disabled selected>Veldu rétt</option>
+        <option value="Smjörpulsan">Smjörpulsan</option>
+        <option value="Smjörsúpa">Smjörsúpa</option>
+        <option value="Smjörsamloka">Smjörsamloka</option>
+        <option value="Djúpsteikt smjörpulsa">Djúpsteikt smjörpulsa</option>
+        <option value="Smjörsalat">Smjörsalat</option>
+    </select>
+    <label for="comments">Athugasemdir:</label>
+    <textarea id="comments" name="comments"></textarea>
+    <button type="submit">Senda pöntun</button>
+</form>
+<footer>
+    <dl>
+        <dt>
+            <strong>
+                Opnunartími
+            </strong>
+        </dt>
+        <dd>
+            Alla daga 11:00-21:00
+        </dd>
+        <dt>
+            <strong>
+                Staðsetning
+            </strong>
+        </dt>
+        <dd>
+            Kirkjustétt 1, 113 Reykjavík
+        </dd>
+        <dt><a href="../index.html">Forsíða</a></dt>
+    </dl>
+</footer>
+

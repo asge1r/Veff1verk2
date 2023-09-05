@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="is">
+<head>
+    <meta charset="UTF-8">
+    <title>Matseðill</title>
+</head>
+<body>
+    <header>
+        <h1>Matseðill</h1>
+    </header>
+    <main>
+        <table>
+            <thead>
+                <tr>
+                    <th>Númer</th>
+                    <th>Titill</th>
+                    <th>Lýsing</th>
+                    <th>Verð</th>
+                </tr>
+            </thead>
+            <tbody id="menu-items">
+
+            </tbody>
+        </table>
+    </main>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            fetch('../gogn/rettir.csv')
+                .then(response => response.text())
+                .then(data => {
+                    const rows = data.split('\n').slice(1); // Skip the header row
+                    const menuItems = document.getElementById('menu-items');
+
+                    rows.forEach(row => {
+                        const [Númer, Titill, Lýsing, Verð] = row.split(',');
+                        const tr = document.createElement('tr');
+                        tr.innerHTML = `
+                            <td>${Númer}</td>
+                            <td>${Titill}</td>
+                            <td>${Lýsing}</td>
+                            <td>${Verð}</td>
+                        `;
+                        menuItems.appendChild(tr);
+                    });
+                });
+        });
+    </script>
+    <footer>
+        <dl>
+            <dt>
+                <strong>
+                    Opnunartími
+                </strong>
+            </dt>
+            <dd>
+                Alla daga 11:00-21:00
+            </dd>
+            <dt>
+                <strong>
+                    Staðsetning
+                </strong>
+            </dt>
+            <dd>
+                Kirkjustétt 1, 113 Reykjavík
+            </dd>
+            <dt><a href="../index.html">Forsíða</a></dt>
+        </dl>
+    </footer>
+</body>
+</html>
